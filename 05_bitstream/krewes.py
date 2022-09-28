@@ -3,7 +3,7 @@ Trio: April, Wanying, Erica
 Soft Dev
 K05 -- Random Devo and Ducky from Krewes
 2022-09-28
-time spent:  
+time spent: 15 min 
 DISCO: 
 
 QCC:
