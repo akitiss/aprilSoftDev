@@ -22,10 +22,12 @@ def make_dictionary(content):
     content_list = content.split('\n')
     while counter < len(content_list):
         occupation_list = content_list[counter].rsplit(",", maxsplit = 1)
-        percentage = float(occupation_list[1])
+        percentage = float(occupation_list[1]) #turning percentage to number 
+        occupation = occupation_list[0]
+        if occupation[0] == '"': #to remove the extra " around the strings 
+            occupation = occupation.split('"')[1]
+        dictionary[percentage] = occupation #add key and term to dictionary
         counter += 1
-        dictionary[percentage] = []
-        dictionary[percentage].append(occupation_list[0])
     return dictionary
 
 print(make_dictionary(c))
