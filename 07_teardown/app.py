@@ -45,7 +45,6 @@ QCC:
 5. Why is flask imported with "__name__", what "__name__" even mean??? 
 ...
 INVESTIGATIVE APPROACH:
-<Your concise summary of how
- you and your team set about
- "illuminating the cave of ignorance" here...>
+We used out previous coding knowledge as well as any other knowledge. Then we tested out the code to see if what we did was right. 
+
 '''
