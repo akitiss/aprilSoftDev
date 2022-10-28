@@ -12,4 +12,5 @@
 
 > A SQL program requires a database to read from. 
 - Opening SQL from the application icon will not provide a database to read from.
-    - You can still provide a database though! Using the command `.open <FILENAME>` immediately after SQL opens will make this `FILENAME` the reference database.
+    - You can still provide a database though! Using the command `.open <FILENAME>` immediately after SQL opens will make this `FILENAME` the reference database (recommended )
+
