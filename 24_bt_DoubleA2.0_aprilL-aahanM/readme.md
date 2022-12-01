@@ -2,7 +2,7 @@
 Soft Dev pd08
 K24: TASTY 
 2022-11-30
-time spent:  
+time spent:  1.5hr
 
 DISCO: 
 - very cool nav bar 
@@ -11,8 +11,8 @@ DISCO:
 
 QCC: 
 - how does nav drop down work??? 
-- what is rem
+- WHAT IS REM???? 
 
-q0: 1
-q0b: Joshua Liu, Yuki Feng 
-q1: 
+q0: 1  
+q0b: Joshua Liu, Yuki Feng   
+q1: Bootstrap. We think its easier to use and has more variety in colors and customization  
