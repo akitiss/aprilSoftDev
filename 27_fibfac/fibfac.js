@@ -28,12 +28,11 @@ fact(4);
 fact(5); 
 
 function fib(num) {
-    answer = num;
-    while (num > 2) {
-        answer = answer + (num-1);
-        num --;
+    if (num < 2){
+        return num;
+    } else {
+        return (fib(n-2) + fib(n-1));
     }
-    return answer; 
 }
 
 fib(1);
