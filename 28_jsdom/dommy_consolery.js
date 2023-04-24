@@ -17,8 +17,8 @@
    (delete this block comment once you are done)
 */
 
-// Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon 
-// SoftDev pd0
+// BooSeok :: April Li, Jasmine Yuen  
+// SoftDev pd2
 // K28 -- Getting more comfortable with the dev console and the DOM
 // 2023-04-05w
 // --------------------------------------------------
@@ -55,13 +55,16 @@ var addItem = function(text) {
   var newitem = document.createElement("li");
   newitem.innerHTML = text;
   list.appendChild(newitem);
+  //return text;
 };
+//adds specified text as a new item on the list (is numbered)
 
 
 var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
 };
+//removes item at given index on the list and renumbers the rest  of the list to stay chronological
 
 
 var red = function() {
@@ -70,6 +73,7 @@ var red = function() {
     items[i].classList.add('red');
   }
 };
+//turns every listed black text red 
 
 
 var stripe = function() {
@@ -82,11 +86,28 @@ var stripe = function() {
     }
   }
 };
+//turns every odd number red and even number blue (disregarding 2-7)
 
 //insert your implementations here for...
 // FIB
 // FAC
 // GCD
+
+function fact(num) {
+  answer = num;
+  while (num > 2) {
+      answer = answer * (num-1);
+      num --;
+  }
+  return answer; 
+}
+function fib(num) {
+  if (num < 2){
+      return num;
+  } else {
+      return (fib(n-2) + fib(n-1));
+  }
+}
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
