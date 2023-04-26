@@ -4,7 +4,7 @@ var stopButton = document.getElementById("buttonStop"); // GET STOP BUTTON
 
 var ctx = c.getContext("2d");
 
-ctx.fillStyle = "black";
+ctx.fillStyle = "#3EB489";
 
 var requestID = "stop"; //init global var for use with animation frames
 
@@ -13,36 +13,32 @@ var clear = (e) => {
 };
 
 var radius = 0;
-var growing = true; 
+var growing = true;
 
 var drawDot = () => {
-    requestID = "dot";
-    if (radius >= 250) {
-        growing = false;
-    }
-    if (radius <= 0) {
-        growing = true; 
-    }
-
+    //clear screen and animation
+    window.cancelAnimationFrame(requestID);
     clear();
-    if (growing) {
-        ctx.beginPath();
-        ctx.arc(250, 250, radius, 0, 2 * Math.PI);
-        ctx.fill();
-        radius = radius+10;
-        window.requestAnimationFrame(drawDot);
-    } else {
-        ctx.beginPath();
-        ctx.arc(250, 250, radius, 0, 2 * Math.PI);
-        ctx.fill();
-        radius = radius-10;
-        window.requestAnimationFrame(drawDot);
-    }
 
+    //draw circle 
+    ctx.beginPath();
+    ctx.arc(250, 250, radius, 0, 2 * Math.PI);
+    ctx.fill();
+    if (growing) {
+        if (radius < 250) {
+            radius = radius+1;
+        }
+        else { growing = false; }
+    } else {
+        if (radius > 0) {
+            radius = radius-1;
+        }
+        else { growing = true; }
+    }
+    requestID = window.requestAnimationFrame(drawDot);
     /* 
         Wipe the canvas, 
         Repaint the circle,
-
         ... and somewhere (where/when is the right time?)
         Update requestID to propagate the animation.
         You will need 
@@ -55,7 +51,7 @@ var drawDot = () => {
 var stopIt = () => {
     console.log("stopIt invoked...");
     console.log(requestID);
-    //window.cancelAnimationFrame()
+    window.cancelAnimationFrame(requestID);
 }
 
 dotButton.addEventListener("click", drawDot);
