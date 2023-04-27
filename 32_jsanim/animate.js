@@ -1,50 +1,55 @@
 var c = document.getElementById("playground"); 
-var dotButton = document.getElementById("buttonCircle"); 
-var stopButton = document.getElementById("buttonStop");
-var dvdButton = document.getElementById("dvd")
+var dotButton = document.getElementById("circle"); 
+var stopButton = document.getElementById("stop");
+var dvdButton = document.getElementById("dvd");
 
 var ctx = c.getContext("2d");
 ctx.fillStyle = "#3EB489";
 var requestID; 
 
 var clear = (e) => {
-    e.preventDefault(); //what dis?
+    //e.preventDefault(); //what dis?
     ctx.clearRect(0, 0, 500, 500);
 };
 
 var dvdLogoSetup = function() {
     window.cancelAnimationFrame(requestID);
 
-    var rectWidth = 600;
-    var rectHeight = 400;
+    var rectWidth = 60;
+    var rectHeight = 40;
 
     //make sure the picture doesn't spill out
-    var rectX = Math.random()*500;
-    var rectY = Math.random()*500;
+    var rectX = Math.random()*(c.width-rectWidth);
+    var rectY = Math.random()*(c.height-rectHeight);
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
 
+    var xPosneg = Math.pow(-1, Math.floor(Math.random()*3));
+    var yPosneg = Math.pow(-1, Math.floor(Math.random()*3));
+
+    var xVel = 2*xPosneg;
+    var yVel = 2*yPosneg;
+
     var dvdLogo = function() {
-        ctx.clearRect(0,0,c.width,c.height);
-        //ctx.fillRect(rectX,rectY,rectWidth,rectHeight);
-        ctx.drawImage(logo, rectX, rectY, rectWidth, rectheight);
-        if (rectX == 0) {
-            xVel = 1;
+        clear();
+        ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+        if (rectX < 0 || rectX > c.width - rectWidth) {
+            xVel = -xVel;
         }
-        if (rectX == c.width) {
-            xVel = -1;
+        if (rectY < 0 || rectY > c.height - rectHeight) {
+            yVel = -yVel;
         }
-        if (rectY == 0 || rectY == c.height) {
-            yVel = 1;
-        }
-        rectX = rectX + xVel;
-        rectY = rectY + yVel;
-    };
+        rectX += xVel;
+        rectY += yVel;
+        requestID = window.requestAnimationFrame(dvdLogo);
+    }
     dvdLogo();
  };
         
-        
+var radius = 0;
+var growing = true;
+ 
 var drawDot = () => {
     window.cancelAnimationFrame(requestID);
     clear();
