@@ -1,0 +1,10 @@
+bubble and capture 
+
+when the third parameter of addEventListener is activated, it'll determine if the event when be in the bubbling phase of capturing phase. 
+the default is always bubbling pahse where it goes from the smallest element to its parents and so on. 
+when the third parameter of addEventListener is left blank or false is written, it will stay in the default bubbling mode. 
+however, when addEventListener is true, it'll switch to bubbling mode.
+in capture mode, it'll go in the inverse direction from most overachering element to the smallest. 
+it doesn't matter what order they are called, it'll be in the same order regardless.
+
+
