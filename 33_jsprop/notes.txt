@@ -5,6 +5,7 @@ the default is always bubbling pahse where it goes from the smallest element to 
 when the third parameter of addEventListener is left blank or false is written, it will stay in the default bubbling mode. 
 however, when addEventListener is true, it'll switch to bubbling mode.
 in capture mode, it'll go in the inverse direction from most overachering element to the smallest. 
+it goes through three phases. in the capture phase it goes down to the target element and from then it'll bubble back up from the target to the most parent element.
 it doesn't matter what order they are called, it'll be in the same order regardless.
 
 
